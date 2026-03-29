@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #F3F4F6;
+    --accent-blue: #2563EB;
+    --text-main: #090E17;
+  }
+
+  body {
+    @apply font-sans antialiased text-brand-deep bg-brand-bg;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-brand-soft rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-brand-primary/50; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-glass;
+  }
+
+  .card-surface {
+    @apply bg-white rounded-2xl border border-brand-soft shadow-premium;
+  }
+
+  .letter-tile {
+    @apply relative flex items-center justify-center
+           w-11 h-11 sm:w-12 sm:h-12
+           rounded-xl border-2 border-brand-soft
+           font-mono font-bold text-lg
+           text-brand-deep bg-white
+           transition-all duration-150 select-none cursor-pointer
+           active:scale-95;
+  }
+
+  .letter-tile-selected {
+    @apply border-brand-primary text-brand-primary bg-brand-primary/5;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  }
+
+  .letter-tile-correct {
+    @apply border-emerald-500 text-emerald-600 bg-emerald-50;
+  }
+
+  .letter-tile-hint {
+    @apply border-amber-400 text-amber-600 bg-amber-50;
+  }
+
+  .answer-slot {
+    @apply flex items-center justify-center
+           w-10 h-12 sm:w-12 sm:h-14
+           rounded-xl border-2 border-dashed border-brand-soft
+           font-mono font-bold text-lg text-brand-deep
+           bg-white/60 transition-all duration-150;
+  }
+
+  .answer-slot-filled {
+    @apply border-solid border-brand-primary/60 bg-brand-primary/5;
+  }
+
+  .answer-slot-correct {
+    @apply border-solid border-emerald-500 bg-emerald-50 text-emerald-700;
+  }
+
+  .answer-slot-hint {
+    @apply border-solid border-amber-400 bg-amber-50 text-amber-700;
+  }
+}
+
+@keyframes reverse-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+.animate-reverse-spin { animation: reverse-spin 1.5s linear infinite; }
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%,60% { transform: translateX(-6px); }
+  40%,80% { transform: translateX(6px); }
+}
+.animate-shake { animation: shake 0.4s ease; }
+
+@keyframes pop {
+  0%   { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+.animate-pop { animation: pop 0.25s cubic-bezier(0.34,1.56,0.64,1); }

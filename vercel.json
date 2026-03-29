@@ -1,0 +1,22 @@
+{
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/api/(.*)",         "destination": "/api/index" },
+    { "source": "/sync/(.*)",        "destination": "/api/index" },
+    { "source": "/sync",             "destination": "/api/index" },
+    { "source": "/leaderboard/(.*)", "destination": "/api/index" },
+    { "source": "/leaderboard",      "destination": "/api/index" },
+    { "source": "/user/(.*)/stats",  "destination": "/api/index" },
+    { "source": "/user/(.*)",        "destination": "/api/index" },
+    { "source": "/health",           "destination": "/api/index" },
+    { "source": "/(.*)",             "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/index.ts": {
+      "memory": 512,
+      "maxDuration": 10
+    }
+  }
+}

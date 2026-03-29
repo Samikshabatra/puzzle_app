@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#2563EB" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Bluestock" />
+  <meta name="description" content="Bluestock — Daily Neural Puzzle Platform" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <title>Bluestock | Neural Puzzle Platform</title>
+  <link rel="stylesheet" href="/splash.css" />
+  <script>
+    window.addEventListener('load', () => {
+      const splash = document.getElementById('splash');
+      if (splash) {
+        setTimeout(() => {
+          splash.style.opacity = '0';
+          setTimeout(() => splash.remove(), 500);
+        }, 800);
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="splash">
+    <div style="width:48px;height:48px;border:3px solid rgba(37,99,235,0.1);border-top-color:#2563EB;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:16px;"></div>
+    <div style="font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:0.3em;color:#2563EB;font-family:'Inter',sans-serif;animation:pulse 1.5s ease-in-out infinite;">Initializing Bluestock...</div>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
