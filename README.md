@@ -2,7 +2,7 @@
 
 > A daily science-themed word puzzle app with cryptograms, leaderboards, streaks, and offline support. One puzzle a day, shared by everyone.
 
-**Live:** https://puzzle-rn2csp1q0-samikshas-projects-2fe90868.vercel.app/
+**Live:** https://puzzle-app-inky.vercel.app/
 
 ---
 
